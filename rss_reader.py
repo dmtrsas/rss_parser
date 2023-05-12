@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 def rss_parser(
         xml: str,
         limit: Optional[int] = None,
-        json: bool = False,
 ):
     """
     RSS parser.
@@ -14,7 +13,6 @@ def rss_parser(
     Args:
         xml: XML document as a string.
         limit: Number of the news to return. if None, returns all news.
-        json: If True, format output as JSON.
 
     Returns:
         List of strings.
@@ -122,5 +120,3 @@ def rss_parser(
 
     return (f"{feed_header_output}\n"
             f"{items_output}")
-
-# print(rss_parser(xml='https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml', limit=3, json=False))
